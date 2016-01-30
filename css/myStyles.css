@@ -67,9 +67,10 @@
 		color:#fff;
 		z-index:10000;
 	}
-	footer div{
+	footer a{
 		text-align:center; 
 		border:#555 solid .2em;
+		color: #fff;
 	}
 	footer div:first-of-type {
 		background:#fff;
