@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Movie API</title>
+	<!-- Latest compiled and minified bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!--my CSS-->
+	<link rel="stylesheet" href="css/myStyles.css">
+
+	<style>
+
+	</style>
+	
+	<!--jquery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	<!--angular-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+	<!-- angular routing-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
+
+	<!--modular-->
+	<script src="js/app.js"></script>
+	<!--controller-->
+	<script src="js/controllers/mainController.js"></script>
+	<!--service-->
+	<script src="js/services/movies.js"></script>
+	
+	<!--api call-->
+	<script>
+		var baseUrl = 'http://image.tmdb.org/t/p/';
+		var backdropSizes = ["w300","w780","w1280","original"];
+		var posterSizes = ["w92","w154","w185","w342","w500","w780","original"];
+		var profileSizes = ["w45","w185","h632","original"];
+		var still_sizes = ["w92","w185","w300","original"];
+		/*var config;
+		var obj;
+		var key = "api_key=af8274b3d5d6b03bdbd0443854a35c7a";
+		var apiUrl = 'http://api.themoviedb.org/3/';*/
+		
+		/*/$.getJSON(apiUrl + 'configuration?' + key, function(json){
+			console.log(json);
+			config = json;
+		});
+
+		$.getJSON(apiUrl + 'movie/now_playing?' + key, function(data){
+
+			
+			obj = data;
+			console.log(obj);
+
+			/*$('.content').append('<div><img src="' + config.images.base_url + config.images.poster_sizes[3] + obj.results[0].poster_path + '" /></div>');*/
+
+			/*$.each(obj.results, function(index, val){
+
+				$('.content').append('<div class="col-xs-6"><img src="' + config.images.base_url + config.images.poster_sizes[2] + val.poster_path + '" /></div>');
+
+			});*/
+
+			/*$.each(obj, function(index, val){
+				// console.log(val);
+				$('body').append("<div style='background: url('"+ config.images.base_url + config.images.poster_sizes[3] + val.file_path +"') no-repeat contain center'><h2>"+ val.Title +"</h2></div>");
+			});*/
+
+			/*$('body').append("<div id='bg' style='background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1)), url("+ config.images.base_url + config.images.backdrop_sizes[1] + obj.backdrop_path + ");'><h2>"+ obj.title +"</h2><p>Duration: " + obj.runtime + "min | " + obj.release_date + "</p><p>Overview: " + obj.overview + "</p></div>");*/
+
+
+		// });
+	</script>
+</head>
+<body ng-app="myApp">
+	<header class="container-fluid">
+		<div class="search-btn col-xs-12">
+			<span class="glyphicon glyphicon-search"></span>
+		</div>
+		<div class="header-btns">
+			<div class="col-xs-6 active" ng-click="">Now Showing</div>
+			<div class="col-xs-6" ng-click="">Upcoming</div>
+		</div>
+	</header>
+
+	<div class="content container-fluid"  ng-controller="MainController">
+
+		<div class="col-xs-6" ng-repeat="movie in nowPlaying.results">
+			<img ng-src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" />
+		</div>
+
+	</div>
+
+	<footer class="container-fluid">
+		<div class="col-xs-4">
+			<span class="glyphicon glyphicon-home"></span>
+		</div>
+		<div class="col-xs-4">
+			<span class="glyphicon glyphicon-facetime-video"></span>
+		</div>
+		<div class="col-xs-4">
+			<span class="glyphicon glyphicon-info-sign"></span>
+		</div>
+	</footer>
+</body>
+</html>
