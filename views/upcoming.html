@@ -1,0 +1,12 @@
+	<div class="header-btns">
+			<a href="#/" class="col-xs-6">Now Showing</a>
+			<a href="#upcoming" class="col-xs-6 active">Upcoming</a>
+	</div>
+
+	<div class="content container-fluid">
+
+		<div class="col-xs-6" ng-repeat="movie in upcoming.results">
+			<img ng-src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" />
+		</div>
+
+	</div>
