@@ -6,15 +6,15 @@ app.config(function($routeProvider) {
             .when('/', {
                 templateUrl : 'views/now-playing.html',
                 controller  : 'mainController'
-            })
+            });
 
-            .when('/upcoming', {
+            /*.when('/upcoming', {
                 templateUrl : 'views/upcoming.html',
-                controller  : 'upcomingController'
+                controller  : 'js/controllers/upcomingController'
             })
 
             .when('/now-showing', {
                 templateUrl : 'views/now-playing.html',
-                controller  : 'mainController'
-            });
+                controller  : 'js/controllers/mainController'
+            });*/
     });
