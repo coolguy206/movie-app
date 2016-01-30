@@ -41,6 +41,7 @@
 		text-transform: uppercase;
 		padding: .5em;
 		color: #fff;
+		display:block;
 	}
 	.active {
 		background:#fff; 
@@ -49,7 +50,7 @@
 
 	.content {
 		position:relative;
-		top:110px;
+		top:130px;
 		padding:20px 0 110px 0;
 	}
 	.content div {
