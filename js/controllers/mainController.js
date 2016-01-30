@@ -1,8 +1,8 @@
-app.controller('MainController', ['$scope', 'nowPlaying', 'upcoming', '$routeParams', function($scope,nowPlaying,upcoming, $routeParams) { 
+app.controller('mainController', ['$scope', 'nowPlaying', 'upcoming', function($scope,nowPlaying,upcoming) { 
   $scope.title = 'Top Sellers in Books'; 
 
   nowPlaying.success(function(data){
-  	$scope.nowPlaying = data[$routeParams.id];
+  	$scope.nowPlaying = data;
   });
 
   upcoming.success(function(obj){
