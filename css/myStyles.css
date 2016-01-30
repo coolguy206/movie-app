@@ -27,25 +27,25 @@
 		margin-bottom:20px; 
 		text-align:right;
 	}
-	span.glyphicon-search, span.glyphicon-home, span.glyphicon-facetime-video, span.glyphicon-info-sign {font-size:3em;}
+	span.glyphicon-search, span.glyphicon-home, span.glyphicon-facetime-video, span.glyphicon-info-sign {
+		font-size:3em;
+	}
 	.header-btns {
 		text-align: center; 
 		font-size:1.5em;
+		position: relative;
+		top: 94px;
 	}
-	.header-btns div {
+	.header-btns a {
 		border:#555 solid .2em; 
 		text-transform: uppercase;
 		padding: .5em;
+		color: #fff;
 	}
-	/*.header-btns div:first-of-type {
-		background:#fff; 
-		color:#000;
-	}*/
 	.active {
 		background:#fff; 
-		color:#000;
+		color:#000 !important;
 	}
-	.header-btns a {color:#000;}
 
 	.content {
 		position:relative;
