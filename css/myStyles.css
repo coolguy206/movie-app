@@ -5,13 +5,17 @@
 		color: #fff;
 	}
 	img {max-width:100%; height: auto;}
+	iframe {max-width:100%;}
 	#bg { 
 		background-repeat: no-repeat !important; 
 		background-size:100% auto !important; 
 		background-position: center top !important; 
 		padding: 10px;
+		position: relative;
+		top: 110px;
 	}
-	#bg p:first-of-type {margin-top: 330px;}
+	#bg h2 {margin-top:240px;}
+	/*#bg p:first-of-type {margin-top: 330px;}*/
 	h2, p {color:#fff;}
 	header {
 		background:#363636; 
@@ -27,7 +31,7 @@
 		margin-bottom:20px; 
 		text-align:right;
 	}
-	span.glyphicon-search, span.glyphicon-home, span.glyphicon-facetime-video, span.glyphicon-info-sign {
+	span.glyphicon-search, span.glyphicon-home, span.glyphicon-facetime-video, span.glyphicon-info-sign, span.glyphicon-triangle-bottom, span.glyphicon-triangle-top {
 		font-size:3em;
 	}
 	.header-btns {
@@ -53,12 +57,40 @@
 		top:130px;
 		padding:20px 0 110px 0;
 	}
-	.content div {
+	/*.content div {
+		margin-bottom:20px; 
+		height:266px; 
+	}*/
+	.home {
+		overflow:hidden;
+		list-style-type:none;
+		padding:1px;
+	}
+	.home li, .similar-movies li {
 		margin-bottom:20px; 
 		height:266px; 
 	}
-
-
+	.details, .trailer, .posters, .cast, .similar-movies {
+		padding:0 2em;
+	}
+	.details h2, .posters h2, .cast h2, .similar-movies h2 {
+		text-transform: uppercase;
+	}
+	.posters ul, .cast ul, .similar-movies ul {
+		overflow: hidden;
+		list-style-type: none;
+		padding:0px;
+	}
+	.posters li {
+		height: 252px;
+		margin-bottom:10px;
+		/*width: 157px;
+		float:left;
+		margin-right: 10px;*/
+	}
+	.cast li {
+		height: 340px;
+	}
 	footer {
 		position:fixed; 
 		bottom:0; 
