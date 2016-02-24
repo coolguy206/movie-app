@@ -1,12 +1,21 @@
 	<div class="header-btns">
-			<a href="#/" class="col-xs-6 active">Now Showing</a>
-			<a href="#upcoming" class="col-xs-6">Upcoming</a>
+
+		<div class="col-xs-4 active" data-name="now_playing" ng-click="change($event)">Now Showing</div>
+		<div class="col-xs-4" data-name="popular" ng-click="change($event)">Popular</div>
+		<div class="col-xs-4" data-name="upcoming" ng-click="change($event)">Upcoming</div>
 	</div>
 
-	<div class="content container-fluid">
-
-		<div class="col-xs-6" ng-repeat="movie in nowPlaying.results">
-			<img ng-src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" />
+	<div class="content container" id="home" ng-switch on="myData">
+		<div class="list">
+			<toggle-view></toggle-view>
 		</div>
 
+		<div ng-switch-when="true" class="switch">
+			<image-list images="nowPlaying"></image-list>
+		</div>
+
+		<div ng-switch-when="false" class="switch">
+			<movie-list-view scope="nowPlaying"></movie-list-view>
+		</div>
+	
 	</div>

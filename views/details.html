@@ -1,46 +1,117 @@
-
-<div class="content">
-	<img ng-src="http://image.tmdb.org/t/p/w780/{{details.backdrop_path}}" />
-	<div class="details">
-		<h2>{{details.title}}</h2>
-		<p>Duration: {{details.runtime}} min | Released: {{details.release_date | date:'MMM d, yyyy'}}</p>
-		<p>Overview: {{details.overview}}</p>
+	<div class="details-back-btn">
+		<back-btn></back-btn>
 	</div>
 
-	<div class="trailer">
+<div class="content container" id="details">
+
+	<div id="portrait">
+		<h1 class="text-center">{{details.title}}</h1>
+		<img ng-src="http://image.tmdb.org/t/p/w780/{{details.backdrop_path}}" ng-if="details.backdrop_path"/>
+		<div class="details">
+			<h3>Duration: {{details.runtime}} min</h3>
+			<h3>Released: {{details.release_date | date:'MMM d, yyyy'}}</h3>
+			<h3>Overview:</h3>
+			<p>{{details.overview}}</p>
+			<h3>Genres</h3>
+			<ul>
+				<li ng-repeat="genre in details.genres" class="btn btn-primary-outline"><a ng-href="#/genre/{{genre.id}}">{{genre.name}}</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="landscape">
+		<div class="half">
+			<h1 class="h2 text-center">{{details.title}}</h1>
+			<img ng-src="http://image.tmdb.org/t/p/w780/{{details.backdrop_path}}" ng-if="details.backdrop_path"/>
+		</div>
+
+		<div class="half">
+			<div class="details">
+				<h3>Duration:</h3>
+				<h4>{{details.runtime}} min</h4>
+				<h3>Released:</h3>
+				<h4>{{details.release_date | date:'MMM d, yyyy'}}</h4>
+				<h3>Overview:</h3>
+				<p>{{details.overview}}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="details" id="landscape">
+		<h3>Genres</h3>
+		<ul>
+			<li ng-repeat="genre in details.genres" class="btn btn-primary-outline"><a ng-href="#/genre/{{genre.id}}">{{genre.name}}</a></li>
+		</ul>
+	</div>
+
+	<div class="trailer" ng-if="details.videos.results[0].key">
 		<iframe width="560" height="315" ng-src="{{youtube}}" frameborder="0" allowfullscreen></iframe>
 	</div>
 
 	<div class="posters">
-		<h2>posters</h2>
-		<p class="text-right" ng-click="postershow=!postershow; posters=!posters"><span class="glyphicon" ng-class="posters ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-top'"></span></p>
-		<ul ng-show="postershow">
-			<li ng-repeat="image in details.images.posters" class="col-xs-6">
-				<img ng-src="http://image.tmdb.org/t/p/w342/{{image.file_path}}" alt="{{details.title}}"/>
-			</li>
-		</ul>
+
+		<hide-show info="posters"></hide-show>
+
+		<div class="overflow">
+			<ul ng-show="posters.show">
+				<li ng-repeat="image in details.images.posters" class="col-xs-6">
+					<a ng-href="#/movie/{{details.id}}/photo/{{details.images.posters.indexOf(image)}}">
+						<img ng-src="http://image.tmdb.org/t/p/w342/{{image.file_path}}" alt="{{details.title}}"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
 	</div>
 
 	<div class="cast">
-		<h2>cast</h2>
-		<p class="text-right" ng-click="castshow=!castshow; cast=!cast"><span class="glyphicon" ng-class="cast ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-top'"></span></p>
-		<ul ng-show="castshow">
-			<li ng-if="image.profile_path" ng-repeat="image in details.credits.cast" class="col-xs-6">
-				<h4>Role: {{image.character}}</h4>
-				<img ng-src="http://image.tmdb.org/t/p/w185/{{image.profile_path}}" alt="{{image.name}}"/>
-				<h4>Actor: {{image.name}}</h4>
-			</li>
-		</ul>
+
+		<hide-show info="cast"></hide-show>
+		
+		<div class="overflow">
+			<ul ng-show="cast.show">
+				<li ng-repeat="image in details.credits.cast" class="col-xs-6">
+					<a ng-href="#/person/{{image.id}}">
+						<p>Role: {{image.character}}</p>
+						<img ng-src="{{image.profile_path}}" alt="{{image.name}}"/>
+						<p>Actor: {{image.name}}</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="cast">
+
+		<hide-show info="crew"></hide-show>
+		
+		<div class="overflow">
+			<ul ng-show="crew.show">
+				<li ng-repeat="image in details.credits.crew" class="col-xs-6">
+					<a ng-href="#/person/{{image.id}}">
+						<p>{{image.job}}</p>
+						<img ng-src="{{image.profile_path}}" alt="{{image.name}}"/>
+						<p>{{image.name}}</p>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 
 	<div class="similar-movies">
-		<h2>Similar Movies</h2>
-		<p class="text-right" ng-click="similarshow=!similarshow; similar=!similar"> <span class="glyphicon" ng-class="similar ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-top'"></span></p>
-		<ul ng-show="similarshow">
-			<li ng-repeat="image in details.similar.results" class="col-xs-6">
-				<a href="#/movie/{{details.similar.results.indexOf(image)}}" ng-click="getMovieId(movie.id)"><img ng-src="http://image.tmdb.org/t/p/w185/{{image.poster_path}}" alt="{{image.title}}"/></a>
-			</li>
-		</ul>
+
+		<hide-show info="similar"></hide-show>
+		
+		<div class="overflow">
+			<ul ng-show="similar.show">
+				<li ng-repeat="image in details.similar.results" class="col-xs-6">
+					<a ng-href="#/movie/{{image.id}}">
+						<img ng-src="http://image.tmdb.org/t/p/w185/{{image.poster_path}}" alt="{{image.title}}"/>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 
 
