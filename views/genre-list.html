@@ -1,0 +1,19 @@
+<div class="genre-title">
+	<back-btn></back-btn>
+	<toggle-view></toggle-view>
+	<h1 class="text-center">{{title}}</h1>
+</div>
+
+<div class="content container" id="details">
+	
+	<div ng-switch on="myData">
+		<div ng-switch-when="true" class="switch">
+			<image-list images="genreMovieList"></image-list>
+		</div>
+
+		<div ng-switch-when="false" class="switch">
+			<movie-list-view scope="genreMovieList"></movie-list-view>
+		</div>
+	</div>
+	
+</div>

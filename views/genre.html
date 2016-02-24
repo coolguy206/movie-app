@@ -1,0 +1,21 @@
+<div class="genre-title">
+	<back-btn></back-btn>
+	<h1 class="text-center">{{title}}</h1>
+</div>
+	
+	<div class="content container" id="details">
+
+		<div class="genre-container">
+			<div ng-repeat="image in backdrops track by $index" class="genre-images">
+				<img ng-src="http://image.tmdb.org/t/p/w780/{{image}}"/>
+			</div>
+
+			<ul class="genres"> 
+				<li ng-repeat="genre in genres">
+					<a ng-href="#/genre/{{genre.id}}">
+						<h2>{{genre.name}}</h2>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>

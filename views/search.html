@@ -1,0 +1,21 @@
+	<div class="content container" id="search">
+		<div class="search-input">
+				<label class="sr-only">Search</label>
+				<input ng-model="search" ng-change="change()" type="text" class="form-control my-search" placeholder="Search">
+		</div>
+		
+		<div class="list">
+			<toggle-view></toggle-view>
+		</div>
+
+		<div ng-switch on="myData">
+			<div ng-switch-when="true" class="switch">
+				<image-list images="searchResults"></image-list>
+			</div>
+
+			<div ng-switch-when="false" class="switch">
+				<movie-list-view scope="searchResults"></movie-list-view>
+			</div>
+		</div>
+
+	</div>

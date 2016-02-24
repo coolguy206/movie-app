@@ -1,0 +1,89 @@
+	<div class="details-back-btn">
+		<back-btn></back-btn>
+	</div>
+
+<div class="content container" id="details">
+
+
+	<div id="person-portrait">
+		<h1 class="text-center">{{person.name}}</h1>
+		<img ng-src="http://image.tmdb.org/t/p/original/{{person.profile_path}}" ng-if="person.profile_path" alt="{{person.name}}"/>
+
+		<div class="cast">
+			<h2>Birthday:</h2>
+			<h3>{{person.birthday | date: 'MMM d, yyyy'}}</h3>
+			<h2 ng-if="person.deathday">Deathday:</h2>
+			<h3 ng-if="person.deathday">{{person.deathday | date: 'MMM d, yyyy'}}</h3>
+			<h2 ng-if="!person.deathday">Age:</h2>
+			<h3 ng-if="!person.deathday">{{age}}</h3>
+			<h2 ng-if="person.place_of_birth">Birthplace:</h2>
+			<h3 ng-if="person.place_of_birth">{{person.place_of_birth}}</h3>
+			<h2>Links</h2>
+			<h3 ng-if="person.imdb_id"><a ng-href="http://www.imdb.com/name/{{person.imdb_id}}" target="_blank">IMDb Profile</a></h3>
+			<h3 ng-if="person.homepage"><a ng-href="{{person.homepage}}" target="_blank">Personal Website</a></h3>
+		</div>
+	</div>
+
+	<div id="person-landscape">
+		<div class="half">
+			<h1 class="h2 text-center">{{person.name}}</h1>
+			<img ng-src="http://image.tmdb.org/t/p/original/{{person.profile_path}}" ng-if="person.profile_path" alt="{{person.name}}"/>
+		</div>
+		
+		<div class="half">
+			<div class="cast">
+				<h2 class="h3">Birthday:</h2>
+				<h3 class="h4">{{person.birthday | date: 'MMM d, yyyy'}}</h3>
+				<h2 class="h3" ng-if="person.deathday">Deathday:</h2>
+				<h3 class="h4" ng-if="person.deathday">{{person.deathday | date: 'MMM d, yyyy'}}</h3>
+				<h2 class="h3" ng-if="!person.deathday">Age:</h2>
+				<h3 class="h4" ng-if="!person.deathday">{{age}}</h3>
+				<h2 class="h3" ng-if="person.place_of_birth">Birthplace:</h2>
+				<h3 class="h4" ng-if="person.place_of_birth">{{person.place_of_birth}}</h3>
+				<h2 class="h3">Links</h2>
+				<h3 class="h4" ng-if="person.imdb_id"><a ng-href="http://www.imdb.com/name/{{person.imdb_id}}" target="_blank">IMDb Profile</a></h3>
+				<h3 class="h4" ng-if="person.homepage"><a ng-href="{{person.homepage}}" target="_blank">Personal Website</a></h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="posters">
+
+		<hide-show info="bio"></hide-show>
+
+		<div class="overflow">
+			<p ng-show="bio.show" class="bio">{{person.biography}}</p>
+		</div>
+	</div>
+
+	<div class="profiles">
+
+		<hide-show info="images"></hide-show>
+		
+		<div class="overflow">
+			<ul ng-show="images.show">
+				<li ng-repeat="image in person.images.profiles" class="col-xs-6">
+					<a ng-href="#/person/{{person.id}}/photo/{{person.images.profiles.indexOf(image)}}">
+						<img ng-src="http://image.tmdb.org/t/p/w185/{{image.file_path}}" alt="{{image.title}}"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="similar-movies">
+
+		<hide-show info="movies"></hide-show>
+		
+		<div class="overflow">
+			<ul ng-show="movies.show">
+				<li ng-if="image.poster_path" ng-repeat="image in person.movie_credits.cast | orderBy: '-release_date'" class="col-xs-6">
+					<a ng-href="#/movie/{{image.id}}">
+						<img ng-src="http://image.tmdb.org/t/p/w185/{{image.poster_path}}" alt="{{image.title}}"/>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>
