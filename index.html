@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Movie API</title>
+	<title>MOVIE APP</title>
 	<!-- Latest compiled and minified bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -26,74 +26,66 @@
 	<!-- angular routing-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
 
+	<!-- angular animate-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+
 	<!--modular-->
 	<script src="js/app.js"></script>
+	
 	<!--controller-->
 	<script src="js/controllers/mainController.js"></script>
+	<script src="js/controllers/aboutController.js"></script>
+	<script src="js/controllers/searchController.js"></script>
 	<script src="js/controllers/detailsController.js"></script>
+	<script src="js/controllers/photoController.js"></script>
+	<script src="js/controllers/genreController.js"></script>
+	<script src="js/controllers/genreListController.js"></script>
+	<script src="js/controllers/personController.js"></script>
+
+	<!--directive-->
+	<script src="js/directives/backBtnDirective.js"></script>
+	<script src="js/directives/imageListDirective.js"></script>
+	<script src="js/directives/toggleViewBtnDirective.js"></script>
+	<script src="js/directives/movieListViewDirective.js"></script>
+	<script src="js/directives/hideShowInfoDirective.js"></script>
+
 	<!--service-->
 	<script src="js/services/movies.js"></script>
 	
-	<!--api call-->
 	<script>
 		var baseUrl = 'http://image.tmdb.org/t/p/';
 		var backdropSizes = ["w300","w780","w1280","original"];
 		var posterSizes = ["w92","w154","w185","w342","w500","w780","original"];
 		var profileSizes = ["w45","w185","h632","original"];
-		var still_sizes = ["w92","w185","w300","original"];
-		/*var config;
-		var obj;
-		var key = "api_key=af8274b3d5d6b03bdbd0443854a35c7a";
-		var apiUrl = 'http://api.themoviedb.org/3/';*/
-		
-		/*/$.getJSON(apiUrl + 'configuration?' + key, function(json){
-			console.log(json);
-			config = json;
-		});
-
-		$.getJSON(apiUrl + 'movie/now_playing?' + key, function(data){
-
-			
-			obj = data;
-			console.log(obj);
-
-			/*$('.content').append('<div><img src="' + config.images.base_url + config.images.poster_sizes[3] + obj.results[0].poster_path + '" /></div>');*/
-
-			/*$.each(obj.results, function(index, val){
-
-				$('.content').append('<div class="col-xs-6"><img src="' + config.images.base_url + config.images.poster_sizes[2] + val.poster_path + '" /></div>');
-
-			});*/
-
-			/*$.each(obj, function(index, val){
-				// console.log(val);
-				$('body').append("<div style='background: url('"+ config.images.base_url + config.images.poster_sizes[3] + val.file_path +"') no-repeat contain center'><h2>"+ val.Title +"</h2></div>");
-			});*/
-
-			/*$('body').append("<div id='bg' style='background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1)), url("+ config.images.base_url + config.images.backdrop_sizes[1] + obj.backdrop_path + ");'><h2>"+ obj.title +"</h2><p>Duration: " + obj.runtime + "min | " + obj.release_date + "</p><p>Overview: " + obj.overview + "</p></div>");*/
-
-
-		// });
+		var still_sizes = ["w92","w185","w300","original"];		
 	</script>
 </head>
-<body ng-app="myApp">
+
+<body>
 	<header class="container-fluid">
 		<div class="search-btn col-xs-12">
-			<span class="glyphicon glyphicon-search"></span>
-		</div>
+			<a ng-href="#/search">
+				<span class="glyphicon glyphicon-search"></span>
+			</a>
+		</div>	
 	</header>
 
-	<div ng-view></div>
+	<div ng-view autoscroll="true" class="view {{pageClass}}"></div>
 
 	<footer class="container-fluid">
 		<a href="#/" class="col-xs-4">
 			<span class="glyphicon glyphicon-home"></span>
+			<p>HOME</p>
 		</a>
-		<a href="#genre" class="col-xs-4">
+
+		<a href="#/genre" class="col-xs-4">
 			<span class="glyphicon glyphicon-facetime-video"></span>
+			<p>GENRES</p>
 		</a>
-		<a href="#about" class="col-xs-4">
+
+		<a href="#/about" class="col-xs-4">
 			<span class="glyphicon glyphicon-info-sign"></span>
+			<p>ABOUT</p>
 		</a>
 	</footer>
 </body>
