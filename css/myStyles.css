@@ -1,101 +1,271 @@
+/*------------------GLOBAL-------------------------*/	
 	body {
 		background:#000;
 		font-size:100%;
 		line-height:150%;
 		color: #fff;
 	}
-	img {max-width:100%; height: auto;}
-	iframe {max-width:100%;}
-	#bg { 
-		background-repeat: no-repeat !important; 
-		background-size:100% auto !important; 
-		background-position: center top !important; 
-		padding: 10px;
-		position: relative;
-		top: 110px;
+	img {
+		max-width:100%; 
+		height: auto; 
+		width: 100%;
 	}
-	#bg h2 {margin-top:240px;}
-	/*#bg p:first-of-type {margin-top: 330px;}*/
-	h2, p {color:#fff;}
+	iframe {
+		max-width:100%;
+	}
+	h1 {
+		margin-bottom:20px;
+		padding: 0 15px;
+	}
+	h2, p {
+		color:#fff;
+	}
+/*------------------HEADER-------------------------*/
 	header {
 		background:#363636; 
 		position: fixed; 
 		top:0; 
 		width:100%; 
-		padding:2em; 
+		padding:1em 0 0 0; 
 		color: #fff;
 		z-index:10000;
 	}
-	header span {display:block;}
-	.search-btn {
-		margin-bottom:20px; 
-		text-align:right;
-	}
-	span.glyphicon-search, span.glyphicon-home, span.glyphicon-facetime-video, span.glyphicon-info-sign, span.glyphicon-triangle-bottom, span.glyphicon-triangle-top {
-		font-size:3em;
+	header span {
+		display:block;
 	}
 	.header-btns {
 		text-align: center; 
 		font-size:1.5em;
-		position: relative;
-		top: 94px;
+		position: fixed;
+		top: 74px;
+		z-index:9999;
+		width:100%;
 	}
-	.header-btns a {
+	.header-btns div {
 		border:#555 solid .2em; 
 		text-transform: uppercase;
 		padding: .5em;
 		color: #fff;
 		display:block;
+		background:#000;
 	}
 	.active {
-		background:#fff; 
+		background:#fff !important; 
 		color:#000 !important;
 	}
-
+/*------------------SEARCH-------------------------*/
+	.search-btn {
+		margin-bottom:20px; 
+		text-align:right;
+	}
+	.search-input {
+		position: relative;
+		top: -18px;
+	}
+	.my-search {
+		position:fixed;
+		top:74px;
+		z-index:9999;
+	}
+/*------------------GLYPHICONS-------------------------*/
+	span.glyphicon-search, span.glyphicon-home, span.glyphicon-facetime-video, span.glyphicon-info-sign, span.glyphicon-triangle-bottom, span.glyphicon-triangle-top, span.glyphicon-arrow-left, span.glyphicon-th-large, span.glyphicon-th-list {
+		font-size:3em;
+	}
+	span.glyphicon-arrow-left {
+		padding-left: 20px;
+	}
+/*------------------IDS-------------------------*/
+	#home {
+		padding-top: 20px;
+	}
+	#details {
+		top:75px;
+		padding-top: 20px;
+	}
+	#search {
+		top:108px;
+		padding-top: 20px;	
+	}
+/*------------------CONTAINERS-------------------------*/
+	.view {
+		position:absolute;
+		width:100%;
+	}
 	.content {
 		position:relative;
-		top:130px;
-		padding:20px 0 110px 0;
+		top:109px;
+		padding:0px 0 110px 0;
+		background: #000;
 	}
-	/*.content div {
-		margin-bottom:20px; 
-		height:266px; 
-	}*/
+	.list {
+		overflow:hidden;
+		position:fixed;
+		width:100%;
+		z-index:99999;
+		top:109px;
+		background:#000;
+	}
+	.list p {
+		float: right;
+	}
+/*------------------ABOUT -------------------------*/
+	.about {
+		position:relative;
+		top:28px;
+	}
+/*------------------GENRE LIST-------------------------*/
+	.genre-title {
+		text-align:center;
+		overflow:hidden;
+		/*margin-bottom: 20px;*/
+		position: fixed;
+		width:100%;
+		top:74px;
+		z-index:99999;
+		background:#000;
+		padding:10px 0;
+	}
+	.genre-title h1, .genre-title p {
+		display: inline;
+	}
+	.genre-title span {
+		float: left;
+	}
+	.genre-title p {
+		float:right;
+	}
+/*------------------GENRE-------------------------*/
+	.genre-container {
+		position: relative;
+		top:40px;
+	}
+	.genre-images {
+		margin-bottom: 40px;
+		height:233px;
+		overflow:hidden;
+	}
+	.genres {
+		position: absolute;
+		z-index:9999;
+		top:0;
+		width: 100%;
+	}
+	.genres li {
+		display: block;
+		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+		margin-bottom: 40px;
+	}
+	.genres a {
+		display: block;
+		height: 233px;
+	}
+	.genres h2 {
+		padding: 150px 0 0 20px;
+		text-transform: uppercase;
+	}
+/*------------------DETAILS-------------------------*/
+	.details-back-btn {
+		position: fixed;
+		top:40px;
+		background:#000;
+		width:100%;
+		z-index:9999;
+	}
+	.details-h2 {
+		overflow: hidden;
+	}
+	.details-h2 h2 {
+		display:inline;
+	}
+	.details-h2 span {
+		float:right;
+	}
+	.details, .trailer, .posters, .cast, .similar-movies, .profiles {
+		padding:0 2em;
+	}
+	.details h1 {
+		padding-left: 0;
+	}
+	.details h2, .posters h2, .cast h2, .similar-movies h2, .profiles h2 {
+		text-transform: uppercase;
+	}
+	.details ul, .posters ul, .cast ul, .similar-movies ul, .genres , .list-view, .profiles ul{
+		overflow: hidden;
+		list-style-type: none;
+		padding:0px;
+	}
+	.details li {
+		margin: 0 10px 10px 0;
+		border:1px solid #337ab7;
+	}
+	.overflow {
+		overflow:hidden;
+	}
+	.overflow ul {
+		padding: 20px 0;
+	}
+	.posters ul, .cast ul, .similar-movies ul, .bio, .overflow ul {
+		position: relative;
+	}
+	.posters li {
+		height: 252px;
+		margin-bottom:10px;
+	}
+	.posters, .cast, .similar-movies, .profiles {
+		margin-bottom:20px;
+	}
+	.poster {
+		margin-top: 20px;
+	}
+	.cast li {
+		height: 340px;
+	}
+	.profiles  li {
+		margin-bottom: 20px;
+	}
+	.bio {
+		padding-top: 10px;
+	}
+/*------------------IMAGE LIST DIRECTIVE-------------------------*/
 	.home {
 		overflow:hidden;
 		list-style-type:none;
 		padding:1px;
+		position:relative;
+		top:26px;
 	}
 	.home li, .similar-movies li {
 		margin-bottom:20px; 
 		height:266px; 
 	}
-	.details, .trailer, .posters, .cast, .similar-movies {
-		padding:0 2em;
+/*------------------MOVIE LIST VIEW DIRECTIVE-------------------------*/
+	.list-view {
+		position: relative;
+		top:35px;
 	}
-	.details h2, .posters h2, .cast h2, .similar-movies h2 {
-		text-transform: uppercase;
+	.list-view li {
+		overflow:hidden;
+		margin-bottom: 20px;
 	}
-	.posters ul, .cast ul, .similar-movies ul {
-		overflow: hidden;
-		list-style-type: none;
-		padding:0px;
+	.list-view h2, .list-view h3, .list-view p {
+		margin: 0;
 	}
-	.posters li {
-		height: 252px;
-		margin-bottom:10px;
-		/*width: 157px;
+	.list-view .half {
+		width:50%;
 		float:left;
-		margin-right: 10px;*/
+		padding:0 15px;
 	}
-	.cast li {
-		height: 340px;
-	}
+
+/*------------------TOGGLE VIEW BTN DIRECTIVE-------------------------*/
+	.toggle-views {padding-right: 15px;}
+
+
+/*------------------FOOTER-------------------------*/
 	footer {
 		position:fixed; 
 		bottom:0; 
 		width:100%; 
-		padding:2em; 
+		padding:1em; 
 		background:#363636; 
 		color:#fff;
 		z-index:10000;
@@ -104,8 +274,301 @@
 		text-align:center; 
 		border:#555 solid .2em;
 		color: #fff;
+		padding:10px 0;
 	}
-	footer div:first-of-type {
-		background:#fff;
-		color:#000;
+
+/*------------------ANIMATIONS-------------------------*/
+	.ng-enter {
+		z-index:8888;
 	}
+	.ng-leave {
+		z-index: 9999;
+	}
+/*------------------HOME PAGE ANIMATION-------------------------*/
+	.page-home.ng-enter {
+		-webkit-transition:0.5s linear all;
+    	-moz-transition:0.5s linear all;
+    	-o-transition:0.5s linear all;
+    	transition:0.5s linear all;
+		opacity:0;
+	}
+	.page-home.ng-leave {
+		-webkit-transition:0.5s linear all;
+    	-moz-transition:0.5s linear all;
+    	-o-transition:0.5s linear all;
+    	transition:0.5s linear all;
+		left:0;
+	}
+	.page-home.ng-enter-active {
+  		opacity:1;
+	}
+	.page-home.ng-leave-active {
+  		left: 100%;
+	}
+/*------------------EVERY OTHER PAGE ANIMATION-------------------------*/
+	.page-genre.ng-leave, .page-genre-list.ng-leave, .page-details.ng-leave, .page-person.ng-leave, .page-photo.ng-leave {
+		-webkit-transition:0.5s linear all;
+    	-moz-transition:0.5s linear all;
+    	-o-transition:0.5s linear all;
+    	transition:0.5s linear all;
+		left:0;
+	}
+	.page-genre.ng-enter-active {
+  		left:0;
+	}
+	.page-genre.ng-leave-active, .page-genre-list.ng-leave-active, .page-details.ng-leave-active, .page-person.ng-leave-active, .page-photo.ng-leave-active {
+  		left: 100%;
+	}
+/*------------------SEARCH PAGE, ABOUT PAGE, & NG-SWITCH ANIMATION-------------------------*/
+	.page-search.ng-enter, .switch.ng-enter {
+		-webkit-transition:0.5s linear all;
+    	-moz-transition:0.5s linear all;
+    	-o-transition:0.5s linear all;
+    	transition:0.5s linear all;
+		opacity:0;
+	}
+	.page-search.ng-leave, .page-about.ng-leave, .switch.ng-leave {
+		-webkit-transition:0.5s linear all;
+    	-moz-transition:0.5s linear all;
+    	-o-transition:0.5s linear all;
+    	transition:0.5s linear all;
+    	opacity:1;
+	}
+	.page-search.ng-enter-active, .switch.ng-enter-active {
+  		opacity:1;
+	}
+	.page-search.ng-leave-active, .page-about.ng-leave-active, .switch.ng-leave-active {
+  		opacity: 0;
+	}
+/*------------------NG-IF ANIMATION-------------------------*/
+	.ng-hide-add {
+    	-webkit-transition:0.5s linear all;
+    	-moz-transition:0.5s linear all;
+    	-o-transition:0.5s linear all;
+    	transition:0.5s linear all;
+    	opacity: 1;
+	}
+	.ng-hide-remove {
+   		-webkit-transition:0.5s linear all;
+   		-moz-transition:0.5s linear all;
+   		-o-transition:0.5s linear all;
+   		transition:0.5s linear all;
+    	opacity: 0;
+	}
+	.ng-hide-add.ng-hide-add-active { 
+    	opacity: 0;
+	}
+	.ng-hide-remove.ng-hide-remove-active { 
+    	opacity: 1;
+	}
+
+/*------------------RESPONSIVE-------------------------*/
+@media only screen and (min-width: 320px) {
+	header {
+		padding: 5px 0;
+	}
+	#search {
+		padding:0;
+	}
+	.search-btn {
+		margin: 0;
+	}
+	.my-search {
+		top:44px;
+		z-index:999999;
+	}
+	.header-btns {
+		top:44px;
+		font-size:1em;
+	}
+	.list {
+		top:73px;
+		padding-top: 5px;
+	}
+	.content {
+		padding: 0;
+	}
+	.home {
+		padding: 1px 1px 20px 1px;
+	}
+	.home li {
+		height: 195px;
+	}
+	.list-view h2, .list-view h3 {
+		font-size: 18px;
+	}
+	.list-view h2, .list-view h3, .list-view h4 {
+		margin: 0 0 10px 0;
+		color:#fff;
+	}
+
+	.genre-title {
+		top:40px;
+	}
+	
+	#portrait, #person-portrait {
+		display: block;
+	}
+	#landscape, #person-landscape {
+		display:none;
+	}
+	#details {
+		top:44px;
+		padding:20px 0 50px 0;
+	}
+	.posters li, .similar-movies li {
+		height: 170px;
+	}
+	.cast li {
+		height:270px;
+	}
+	.cast li img {
+		margin-bottom:10px;
+	}
+
+	footer {
+		padding: 0;
+	}
+	footer p {
+		margin: 0;
+	}
+	span.glyphicon-home, span.glyphicon-facetime-video, span.glyphicon-info-sign {
+		font-size: 2em;
+	}
+}
+
+@media only screen and (min-width: 375px) {
+	.home li {
+		height: 240px;
+	}
+	.posters li, .similar-movies li {
+		height: 210px;
+	}
+}
+
+@media only screen and (min-width: 414px) {
+	.home li {
+		height: 270px;
+	}
+	.posters li, .similar-movies li {
+		height:240px;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	.col-xs-6 {
+		width:33.3333%;
+	}
+
+	#portrait, #person-portrait {
+		display:none;
+	}
+	#landscape, #person-landscape {
+		display:block;
+		overflow:hidden;
+		margin-bottom: 20px;
+	}
+	#landscape .half, #person-landscape .half {
+		width:50%;
+		float:left;
+		padding: 0 15px;
+	}
+	.trailer {
+		margin-bottom: 20px;
+	}
+}
+
+@media only screen and (min-width: 568px) {
+	.home li {
+		height:240px;
+	}
+	.posters li, .similar-movies li {
+		height:225px;
+	}
+	.list-view li {
+		width:50%;
+		float:left;
+		padding-bottom: 40px;
+	}
+}
+
+@media only screen and (min-width: 667px) {
+	.home li {
+		height: 215px;
+	}
+	.posters li, .similar-movies li {
+		height:200px;
+
+	}
+	.col-xs-6 {
+		width:25%;
+	}
+
+}
+
+@media only screen and (min-width: 736px) {
+	.home li {
+		height:236px;
+	}
+	.posters li, .similar-movies li {
+		height:220px;
+
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#portrait, #person-landscape {
+		display: block;
+	}
+	#landscape, #person-portrait {
+		display:none;
+	}
+	.posters li, .similar-movies li {
+		height:235px;
+
+	}
+	.cast li {
+		height: 300px;
+	}
+	.genres a {
+		height:435px;
+	}
+	.genres h2 {
+		padding: 300px 0 0 20px;
+	}
+	.genre-images {
+		height: 435px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.header-btns {
+		top:42px;
+	}
+	.home li {
+		height:346px;
+	}
+	#landscape, #person-landscape {
+		display: block;
+	}
+	#portrait, #person-portrait {
+		display:none;
+	}
+	.posters li, .similar-movies li {
+		height:340px;
+
+	}
+	.cast li {
+		height: 400px;
+	}
+	.list, .my-search {
+		width:970px;
+	}
+	.list {
+		top:69px;
+	}
+	.container {
+		max-width: 970px;
+	}
+
+}
