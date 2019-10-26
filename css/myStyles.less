@@ -1,0 +1,717 @@
+// Color variables (appears count calculates by raw css)
+@color0: #ffffff; // Appears 11 times
+@color1: #000000; // Appears 7 times
+@color2: #363636; // Appears 2 times
+@color3: #555555; // Appears 2 times
+// Width variables (appears count calculates by raw css)
+@width1: 970px; // Appears 3 times
+@width2: 100%; // Appears 11 times
+@width3: 50%; // Appears 4 times
+// Height variables (appears count calculates by raw css)
+@height0: 233px; // Appears 2 times
+@height1: 340px; // Appears 3 times
+@height5: 266px; // Appears 2 times
+@height8: 270px; // Appears 2 times
+@height9: 235px; // Appears 2 times
+@height10: 435px; // Appears 2 times
+@height11: 220px; // Appears 2 times
+@height12: 200px; // Appears 2 times
+@height13: 225px; // Appears 2 times
+@height14: 240px; // Appears 4 times
+@height15: 210px; // Appears 2 times
+@height16: 170px; // Appears 2 times
+
+body {
+  background: @color1;
+  color: @color0;
+  font-size: 100%;
+  line-height: 150%;
+}
+
+img {
+  height: auto;
+  max-width: @width2;
+  width: @width2;
+}
+
+iframe {
+  max-width: @width2;
+}
+
+h1 {
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+h2 {
+  color: @color0;
+}
+
+p {
+  color: @color0;
+}
+
+header {
+  background: @color2;
+  color: @color0;
+  padding: 1em 0 0;
+  position: fixed;
+  top: 0;
+  width: @width2;
+  z-index: 10000;
+
+  span {
+    display: block;
+  }
+}
+
+.header-btns {
+  font-size: 1.5em;
+  font-size: 1em;
+  position: fixed;
+  text-align: center;
+  top: 74px;
+  top: 44px;
+  width: @width2;
+  z-index: 9999;
+
+  div {
+    background: @color1;
+    border: @color3 solid .2em;
+    color: @color0;
+    display: block;
+    padding: 0.5em;
+    text-transform: uppercase;
+  }
+}
+
+.active {
+  background: @color0 !important;
+  color: @color1 !important;
+}
+
+.search-btn {
+  margin: 0;
+  text-align: right;
+}
+
+.search-input {
+  position: relative;
+  top: -18px;
+}
+
+.my-search {
+  position: fixed;
+  top: 44px;
+  top: 74px;
+  width: @width1;
+  z-index: 9999;
+  z-index: 999999;
+}
+
+span.glyphicon-arrow-left,
+span.glyphicon-facetime-video,
+span.glyphicon-home,
+span.glyphicon-info-sign,
+span.glyphicon-search,
+span.glyphicon-th-large,
+span.glyphicon-th-list,
+span.glyphicon-triangle-bottom,
+span.glyphicon-triangle-top {
+  font-size: 3em;
+}
+
+span.glyphicon-arrow-left {
+  padding-left: 20px;
+}
+
+#home {
+  padding-top: 20px;
+}
+
+#details {
+  padding: 20px 0 50px;
+  top: 44px;
+  top: 75px;
+}
+
+#search {
+  padding: 0;
+  top: 108px;
+}
+
+.view {
+  position: absolute;
+  width: @width2;
+}
+
+.content {
+  background: @color1;
+  padding: 0 0 110px;
+  position: relative;
+  top: 109px;
+}
+
+.list {
+  background: @color1;
+  overflow: hidden;
+  padding-top: 5px;
+  position: fixed;
+  top: 109px;
+  top: 69px;
+  top: 73px;
+  width: @width1;
+  width: @width2;
+  z-index: 99999;
+
+  p {
+    float: right;
+  }
+}
+
+.about {
+  position: relative;
+  top: 28px;
+}
+
+.genre-title {
+  background: @color1;
+  overflow: hidden;
+  padding: 10px 0;
+  position: fixed;
+  text-align: center;
+  top: 40px;
+  top: 74px;
+  width: @width2;
+  z-index: 99999;
+
+  h1 {
+    display: inline;
+  }
+
+  p {
+    display: inline;
+    float: right;
+  }
+
+  span {
+    float: left;
+  }
+}
+
+.genre-container {
+  position: relative;
+  top: 40px;
+}
+
+.genre-images {
+  height: @height10;
+  height: @height0;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.genres {
+  position: absolute;
+  top: 0;
+  width: @width2;
+  z-index: 9999;
+
+  li {
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  a {
+    display: block;
+    height: @height0;
+    height: @height10;
+  }
+
+  h2 {
+    padding: 300px 0 0 20px;
+    text-transform: uppercase;
+  }
+}
+
+.details-back-btn {
+  background: @color1;
+  position: fixed;
+  top: 40px;
+  width: @width2;
+  z-index: 9999;
+}
+
+.details-h2 {
+  overflow: hidden;
+
+  h2 {
+    display: inline;
+  }
+
+  span {
+    float: right;
+  }
+}
+
+.cast,
+.details,
+.posters,
+.profiles,
+.similar-movies,
+.trailer {
+  padding: 0 2em;
+}
+
+.details {
+  h1 {
+    padding-left: 0;
+  }
+
+  li {
+    border: 1px solid #337ab7;
+    margin: 0 10px 10px 0;
+  }
+}
+
+.cast h2,
+.details h2,
+.posters h2,
+.profiles h2,
+.similar-movies h2 {
+  text-transform: uppercase;
+}
+
+.cast ul,
+.details ul,
+.genres,
+.list-view,
+.posters ul,
+.profiles ul,
+.similar-movies ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+.overflow {
+  overflow: hidden;
+
+  ul {
+    padding: 20px 0;
+  }
+}
+
+.bio,
+.cast ul,
+.overflow ul,
+.posters ul,
+.similar-movies ul {
+  position: relative;
+}
+
+.posters {
+  margin-bottom: 20px;
+
+  li {
+    height: 252px;
+    height: @height15;
+    height: @height16;
+    height: @height1;
+    height: @height11;
+    height: @height12;
+    height: @height13;
+    height: @height14;
+    height: @height9;
+    margin-bottom: 10px;
+  }
+}
+
+.cast {
+  margin-bottom: 20px;
+
+  li {
+    height: 300px;
+    height: 400px;
+    height: @height1;
+    height: @height8;
+
+    img {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.similar-movies {
+  margin-bottom: 20px;
+
+  li {
+    height: @height15;
+    height: @height16;
+    height: @height1;
+    height: @height11;
+    height: @height12;
+    height: @height13;
+    height: @height14;
+    height: @height5;
+    height: @height9;
+    margin-bottom: 20px;
+  }
+}
+
+.profiles {
+  margin-bottom: 20px;
+
+  li {
+    margin-bottom: 20px;
+  }
+}
+
+.poster {
+  margin-top: 20px;
+}
+
+.bio {
+  padding-top: 10px;
+}
+
+.home {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 1px;
+  position: relative;
+  top: 26px;
+
+  li {
+    height: 195px;
+    height: 346px;
+    height: @height5;
+    margin-bottom: 20px;
+  }
+}
+
+.list-view {
+  position: relative;
+  top: 35px;
+
+  li {
+    float: left;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-bottom: 40px;
+    width: @width3;
+  }
+
+  h2 {
+    color: @color0;
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+
+  h3 {
+    color: @color0;
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .half {
+    float: left;
+    padding: 0 15px;
+    width: @width3;
+  }
+
+  h4 {
+    color: @color0;
+    margin: 0 0 10px;
+  }
+}
+
+.toggle-views {
+  padding-right: 15px;
+}
+
+footer {
+  background: @color2;
+  bottom: 0;
+  color: @color0;
+  padding: 1em;
+  position: fixed;
+  width: @width2;
+  z-index: 10000;
+
+  a {
+    border: @color3 solid .2em;
+    color: @color0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.ng-enter {
+  z-index: 8888;
+}
+
+.ng-leave {
+  z-index: 9999;
+}
+
+.page-home.ng-enter {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 0;
+  transition: 0.5s linear all;
+}
+
+.page-home.ng-leave {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  left: 0;
+  transition: 0.5s linear all;
+}
+
+.page-home.ng-enter-active {
+  opacity: 1;
+}
+
+.page-home.ng-leave-active {
+  left: 100%;
+}
+
+.page-details.ng-leave,
+.page-genre-list.ng-leave,
+.page-genre.ng-leave,
+.page-person.ng-leave,
+.page-photo.ng-leave {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  left: 0;
+  transition: 0.5s linear all;
+}
+
+.page-genre.ng-enter-active {
+  left: 0;
+}
+
+.page-details.ng-leave-active,
+.page-genre-list.ng-leave-active,
+.page-genre.ng-leave-active,
+.page-person.ng-leave-active,
+.page-photo.ng-leave-active {
+  left: 100%;
+}
+
+.page-search.ng-enter {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 0;
+  transition: 0.5s linear all;
+}
+
+.switch.ng-enter {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 0;
+  transition: 0.5s linear all;
+}
+
+.page-search.ng-leave {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 1;
+  transition: 0.5s linear all;
+}
+
+.page-about.ng-leave {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 1;
+  transition: 0.5s linear all;
+}
+
+.switch.ng-leave {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 1;
+  transition: 0.5s linear all;
+}
+
+.page-search.ng-enter-active {
+  opacity: 1;
+}
+
+.switch.ng-enter-active {
+  opacity: 1;
+}
+
+.page-search.ng-leave-active {
+  opacity: 0;
+}
+
+.page-about.ng-leave-active {
+  opacity: 0;
+}
+
+.switch.ng-leave-active {
+  opacity: 0;
+}
+
+.ng-hide-add {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 1;
+  transition: 0.5s linear all;
+}
+
+.ng-hide-remove {
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  opacity: 0;
+  transition: 0.5s linear all;
+}
+
+.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+@media {
+  only {
+    screen {
+      and {
+        (min-width { &:320px) {
+          header {
+            padding: 5px 0;
+          }
+
+          &:375px) {
+            .home li {
+              height: @height14;
+            }
+
+            &:414px) {
+              .home li {
+                height: @height8;
+              }
+
+              &:480px) {
+                .col-xs-6 {
+                  width: 33.3333%;
+                }
+
+                &:568px) {
+                  .home li {
+                    height: @height14;
+                  }
+
+                  &:667px) {
+                    .home li {
+                      height: 215px;
+                    }
+
+                    &:736px) {
+                      .home li {
+                        height: 236px;
+                      }
+
+                      &:768px) {
+                        #person-landscape,
+                        #portrait {
+                          display: block;
+                        }
+
+                        &:1024px) {
+                          .header-btns {
+                            top: 42px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                #portrait {
+                  display: block;
+                  display: none;
+                  display: none;
+                }
+
+                #person-portrait {
+                  display: block;
+                  display: none;
+                  display: none;
+                  display: none;
+                }
+
+                #landscape {
+                  display: block;
+                  display: block;
+                  display: none;
+                  display: none;
+                  margin-bottom: 20px;
+                  overflow: hidden;
+
+                  .half {
+                    float: left;
+                    padding: 0 15px;
+                    width: @width3;
+                  }
+                }
+
+                #person-landscape {
+                  display: block;
+                  display: block;
+                  display: none;
+                  margin-bottom: 20px;
+                  overflow: hidden;
+
+                  .half {
+                    float: left;
+                    padding: 0 15px;
+                    width: @width3;
+                  }
+                }
+
+                span.glyphicon-home {
+                  font-size: 2em;
+                }
+
+                span.glyphicon-facetime-video {
+                  font-size: 2em;
+                }
+
+                span.glyphicon-info-sign {
+                  font-size: 2em;
+                }
+
+                .trailer {
+                  margin-bottom: 20px;
+                }
+
+                .col-xs-6 {
+                  width: 25%;
+                }
+
+                .container {
+                  max-width: @width1;
+                }
