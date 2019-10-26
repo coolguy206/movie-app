@@ -1,0 +1,54 @@
+@media {
+  only {
+    screen {
+      and {
+        (min-width { &:320px) {
+          header {
+            padding: 5px 0;
+          }
+
+          &:375px) {
+            .home li {
+              height: @height14;
+            }
+
+            &:414px) {
+              .home li {
+                height: @height8;
+              }
+
+              &:480px) {
+                .col-xs-6 {
+                  width: 33.3333%;
+                }
+
+                &:568px) {
+                  .home li {
+                    height: @height14;
+                  }
+
+                  &:667px) {
+                    .home li {
+                      height: 215px;
+                    }
+
+                    &:736px) {
+                      .home li {
+                        height: 236px;
+                      }
+
+                      &:768px) {
+                        #person-landscape,
+                        #portrait {
+                          display: block;
+                        }
+
+                        &:1024px) {
+                          .header-btns {
+                            top: 42px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
