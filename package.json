@@ -4,6 +4,8 @@
   "description": "",
   "main": "Gruntfile.js",
   "dependencies": {
+    "dotenv": "^17.2.2",
+    "ftp": "^0.3.10",
     "grunt-contrib-less": "^2.0.0"
   },
   "devDependencies": {

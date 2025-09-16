@@ -1,7 +1,7 @@
 app.controller('detailsController', ['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce) {
 
 	var key = "api_key=af8274b3d5d6b03bdbd0443854a35c7a";
-	var apiUrl = 'http://api.themoviedb.org/3/'; 
+	var apiUrl = 'https://api.themoviedb.org/3/'; 
 
   $scope.whichMovie = $routeParams.movieID;
   var whichPoster = $routeParams.photoID;

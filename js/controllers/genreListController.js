@@ -1,7 +1,7 @@
 app.controller('genreListController', ['$scope', '$http', '$routeParams', 'genres', function($scope, $http, $routeParams, genres) {
 
 	var key = "api_key=af8274b3d5d6b03bdbd0443854a35c7a";
-	var apiUrl = 'http://api.themoviedb.org/3/'; 
+	var apiUrl = 'https://api.themoviedb.org/3/'; 
 
   $scope.genreMovie = $routeParams.genreID;
   $scope.pageClass= 'page-genre-list';

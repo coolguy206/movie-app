@@ -1,7 +1,7 @@
 app.controller('mainController', ['$scope', 'nowPlaying', '$http', function($scope, nowPlaying, $http) { 
 
 	var key = "api_key=af8274b3d5d6b03bdbd0443854a35c7a";
-	var apiUrl = 'http://api.themoviedb.org/3/'; 
+	var apiUrl = 'https://api.themoviedb.org/3/'; 
 
   nowPlaying.success(function(data){
   	$scope.nowPlaying = data.results;
