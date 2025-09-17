@@ -52,7 +52,7 @@ app.controller('detailsController', ['$scope', '$http', '$routeParams', '$sce', 
           // console.log('its null');
 
         } else {
-          key.profile_path = 'http://image.tmdb.org/t/p/w185' + key.profile_path;
+          key.profile_path = 'https://image.tmdb.org/t/p/w185' + key.profile_path;
         }
       });
 
@@ -62,17 +62,17 @@ app.controller('detailsController', ['$scope', '$http', '$routeParams', '$sce', 
           // console.log('its null');
 
         } else {
-          key.profile_path = 'http://image.tmdb.org/t/p/w185' + key.profile_path;
+          key.profile_path = 'https://image.tmdb.org/t/p/w185' + key.profile_path;
         }
       });
 
       angular.forEach($scope.details.similar.results, function(key, val){
         if(angular.equals(key.poster_path, null)){
-          key.poster_path = 'http://ia.media-imdb.com/images/G/01/imdb/images/nopicture/32x44/film-3119741174._CB379391527_.png'
+          key.poster_path = 'https://ia.media-imdb.com/images/G/01/imdb/images/nopicture/32x44/film-3119741174._CB379391527_.png'
           // console.log('its null');
 
         } else {
-          key.poster_path = 'http://image.tmdb.org/t/p/w185' + key.poster_path;
+          key.poster_path = 'https://image.tmdb.org/t/p/w185' + key.poster_path;
         }
       });
 

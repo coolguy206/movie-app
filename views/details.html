@@ -6,7 +6,7 @@
 
 	<div id="portrait">
 		<h1 class="text-center">{{details.title}}</h1>
-		<img ng-src="http://image.tmdb.org/t/p/w780/{{details.backdrop_path}}" ng-if="details.backdrop_path"/>
+		<img ng-src="https://image.tmdb.org/t/p/w780/{{details.backdrop_path}}" ng-if="details.backdrop_path"/>
 		<div class="details">
 			<h3>Duration: {{details.runtime}} min</h3>
 			<h3>Released: {{details.release_date | date:'MMM d, yyyy'}}</h3>
@@ -22,7 +22,7 @@
 	<div id="landscape">
 		<div class="half">
 			<h1 class="h2 text-center">{{details.title}}</h1>
-			<img ng-src="http://image.tmdb.org/t/p/w780/{{details.backdrop_path}}" ng-if="details.backdrop_path"/>
+			<img ng-src="https://image.tmdb.org/t/p/w780/{{details.backdrop_path}}" ng-if="details.backdrop_path"/>
 		</div>
 
 		<div class="half">
@@ -56,7 +56,7 @@
 			<ul ng-show="posters.show">
 				<li ng-repeat="image in details.images.posters" class="col-xs-6">
 					<a ng-href="#/movie/{{details.id}}/photo/{{details.images.posters.indexOf(image)}}">
-						<img ng-src="http://image.tmdb.org/t/p/w342/{{image.file_path}}" alt="{{details.title}}"/>
+						<img ng-src="https://image.tmdb.org/t/p/w342/{{image.file_path}}" alt="{{details.title}}"/>
 					</a>
 				</li>
 			</ul>
@@ -107,7 +107,7 @@
 			<ul ng-show="similar.show">
 				<li ng-repeat="image in details.similar.results" class="col-xs-6">
 					<a ng-href="#/movie/{{image.id}}">
-						<img ng-src="http://image.tmdb.org/t/p/w185/{{image.poster_path}}" alt="{{image.title}}"/>
+						<img ng-src="https://image.tmdb.org/t/p/w185/{{image.poster_path}}" alt="{{image.title}}"/>
 					</a>
 				</li>
 			</ul>
